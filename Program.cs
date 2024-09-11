@@ -17,7 +17,33 @@ Man behöver alltså jämföra värdena med varandra i den ordningen som de stå
 till sist få en ordnad lista efter x antal loopar. 
 */
 
+
+//testarray med 1-9
+int[] unsortedList = {7, 4, 2, 1, 9, 3, 8, 5, 6}; 
+
+//kallar på metoden 
+bubbleSort(unsortedList); 
+
+Console.WriteLine(unsortedList); 
 //Bubble sort metod 
 
-Console.WriteLine("test"); 
+void bubbleSort(int[] unsortedList) 
+{
+    int temp; //en temporär variabel där man sätter in det större värdet 
+
+    //första loopen kontrollerar om i är mindre än en mindre än längden på arrayen. Varje gång blir i 1 större. 
+    for (int i = 0; i < unsortedList.Length - 1; i++) 
+    {
+        for (int j = 0; j < unsortedList.Length - (1 + i); j++) 
+        {
+            if (unsortedList[j] > unsortedList[j +1])
+            {   
+                //här sker förflyttningen av det större värdet mellan temp och rätt plats i listan efter kontroll
+                temp = unsortedList[j + 1]; 
+                unsortedList[j + 1] = unsortedList[j]; 
+                unsortedList[j] = temp; 
+            }
+        }
+    }
+}
 
