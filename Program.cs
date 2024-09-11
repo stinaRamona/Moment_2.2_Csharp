@@ -24,9 +24,10 @@ int[] unsortedList = {7, 4, 2, 1, 9, 3, 8, 5, 6};
 //kallar på metoden 
 bubbleSort(unsortedList); 
 
-Console.WriteLine(unsortedList); 
-//Bubble sort metod 
+//skriver ut sorterade arrayen 
+Console.WriteLine(String.Join(", ", unsortedList));
 
+//Bubble sort metod 
 void bubbleSort(int[] unsortedList) 
 {
     int temp; //en temporär variabel där man sätter in det större värdet 
