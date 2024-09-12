@@ -18,14 +18,16 @@ till sist få en ordnad lista efter x antal loopar.
 */
 
 
-//testarray med 1-9
-int[] unsortedList = {7, 4, 2, 1, 9, 3, 8, 5, 6}; 
+//testarray med 1-9 
+
+//skapar en array med heltal från 1-100
+int[] unsortedList = Enumerable.Range(1, 100).ToArray();
 
 //kallar på metoden 
 bubbleSort(unsortedList); 
 
 //skriver ut sorterade arrayen 
-Console.WriteLine(String.Join(", ", unsortedList));
+Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt? 
 
 //Bubble sort metod 
 void bubbleSort(int[] unsortedList) 
