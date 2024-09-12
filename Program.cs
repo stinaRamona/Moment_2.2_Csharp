@@ -50,7 +50,7 @@ timer.Stop();
 Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt? 
 
 TimeSpan timeTaken = timer.Elapsed;
-string time = "Time taken: " + timeTaken.ToString(@"m\:ss\.fff");
+string time = "Tid: " + timeTaken.ToString(@"m\:ss\.fff");
 Console.WriteLine(time); 
 
 //Bubble sort metod 
@@ -88,7 +88,7 @@ timer2.Stop();
 
 //skriver ut tiden som har gått under andra genomgången 
 TimeSpan timeTaken2 = timer2.Elapsed;
-string time2 = "Time taken: " + timeTaken2.ToString(@"m\:ss\.fff");
+string time2 = "Tid: " + timeTaken2.ToString(@"m\:ss\.fff");
 Console.WriteLine(time2); 
 
 //jämförelse av tid 
