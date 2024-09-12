@@ -21,6 +21,8 @@ till sist få en ordnad lista efter x antal loopar.
 //skapar en array med slumpade heltal från 1-100
 
 //sätter ett minsta värde och ett högsta värde
+using System.Diagnostics;
+
 int min = 0; 
 int max = 100; 
 
@@ -42,9 +44,10 @@ Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på e
 
 //Bubble sort metod 
 void bubbleSort(int[] unsortedList) 
-{
+{   
     int temp; //en temporär variabel där man sätter in det större värdet 
-
+    var timer = new Stopwatch();
+    timer.Start(); 
     //första loopen kontrollerar om i är mindre än en mindre än längden på arrayen. Varje gång blir i 1 större. 
     for (int i = 0; i < unsortedList.Length - 1; i++) 
     {
@@ -59,5 +62,9 @@ void bubbleSort(int[] unsortedList)
             }
         }
     }
+    timer.Stop(); 
+    TimeSpan timeTaken = timer.Elapsed;
+    string time = "Time taken: " + timeTaken.ToString(@"m\:ss\.fff");
+    Console.WriteLine(time); 
 }
 
