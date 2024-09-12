@@ -18,10 +18,21 @@ till sist få en ordnad lista efter x antal loopar.
 */
 
 
-//testarray med 1-9 
+//skapar en array med slumpade heltal från 1-100
 
-//skapar en array med heltal från 1-100
-int[] unsortedList = Enumerable.Range(1, 100).ToArray();
+//sätter ett minsta värde och ett högsta värde
+int min = 0; 
+int max = 100; 
+
+//initierar en array med 100 siffror
+int[] unsortedList = new int[100]; 
+
+//använder Random för att skapa 100 slumpade rummer mellan min och max i längd med arrayen
+Random randomNumber = new Random(); 
+for (int i=0; i < unsortedList.Length; i++)
+{
+    unsortedList[i] = randomNumber.Next(min, max); 
+}
 
 //kallar på metoden 
 bubbleSort(unsortedList); 
