@@ -81,10 +81,8 @@ timer2.Start();
 //sortering med inbyggda sort
 Array.Sort(unsortedList); 
 // skriver ut alla siffror
-foreach (int number in unsortedList)
-{
-    Console.WriteLine(number);
-} 
+Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt?
+
 //stannar timer nr 2
 timer2.Stop(); 
 
@@ -92,3 +90,10 @@ timer2.Stop();
 TimeSpan timeTaken2 = timer2.Elapsed;
 string time2 = "Time taken: " + timeTaken2.ToString(@"m\:ss\.fff");
 Console.WriteLine(time2); 
+
+/*
+foreach (int number in unsortedList)
+{
+    Console.WriteLine(number);
+}
+*/
