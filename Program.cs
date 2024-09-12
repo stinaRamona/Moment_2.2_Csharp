@@ -43,11 +43,12 @@ timer.Start();
 //kallar på metoden
 bubbleSort(unsortedList); 
 
+//stannar timern och skriver ut tiden
+timer.Stop(); 
+
 //skriver ut sorterade arrayen 
 Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt? 
 
-//stannar timern och skriver ut tiden
-timer.Stop(); 
 TimeSpan timeTaken = timer.Elapsed;
 string time = "Time taken: " + timeTaken.ToString(@"m\:ss\.fff");
 Console.WriteLine(time); 
@@ -73,3 +74,21 @@ void bubbleSort(int[] unsortedList)
     }
 }
 
+//startar ny timer 
+var timer2 = new Stopwatch(); 
+timer2.Start(); 
+
+//sortering med inbyggda sort
+Array.Sort(unsortedList); 
+// skriver ut alla siffror
+foreach (int number in unsortedList)
+{
+    Console.WriteLine(number);
+} 
+//stannar timer nr 2
+timer2.Stop(); 
+
+//skriver ut tiden som har gått under andra genomgången 
+TimeSpan timeTaken2 = timer2.Elapsed;
+string time2 = "Time taken: " + timeTaken2.ToString(@"m\:ss\.fff");
+Console.WriteLine(time2); 
