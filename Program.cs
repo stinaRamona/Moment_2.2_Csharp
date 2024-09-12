@@ -91,9 +91,12 @@ TimeSpan timeTaken2 = timer2.Elapsed;
 string time2 = "Time taken: " + timeTaken2.ToString(@"m\:ss\.fff");
 Console.WriteLine(time2); 
 
-/*
-foreach (int number in unsortedList)
+//jämförelse av tid 
+if(timeTaken < timeTaken2)
 {
-    Console.WriteLine(number);
-}
-*/
+    Console.WriteLine("Bubble sort var snabbare!"); 
+} 
+else 
+{
+    Console.WriteLine("Den inbyggda sorteringen var snabbare!"); 
+}; 
