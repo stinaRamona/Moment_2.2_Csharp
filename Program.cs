@@ -36,6 +36,10 @@ for (int i=0; i < unsortedList.Length; i++)
     unsortedList[i] = randomNumber.Next(min, max); 
 } 
 
+//skriver ut den osorterade listan 
+Console.WriteLine("Osorterad lista:");
+Console.WriteLine(String.Join(", ", unsortedList));
+
 //skapar timer som ska ta tid på metoden. 
 var timer = new Stopwatch();
 timer.Start();
@@ -46,7 +50,8 @@ bubbleSort(unsortedList);
 //stannar timern och skriver ut tiden
 timer.Stop(); 
 
-//skriver ut sorterade arrayen 
+//skriver ut sorterade arrayen
+Console.WriteLine("Sorterad med bubble sort:"); 
 Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt? 
 
 TimeSpan timeTaken = timer.Elapsed;
@@ -81,6 +86,7 @@ timer2.Start();
 //sortering med inbyggda sort
 Array.Sort(unsortedList); 
 // skriver ut alla siffror
+Console.WriteLine("Sorterad med Array.Sort():");
 Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt?
 
 //stannar timer nr 2
