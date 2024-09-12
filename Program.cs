@@ -34,20 +34,29 @@ Random randomNumber = new Random();
 for (int i=0; i < unsortedList.Length; i++)
 {
     unsortedList[i] = randomNumber.Next(min, max); 
-}
+} 
 
-//kallar på metoden 
+//skapar timer som ska ta tid på metoden. 
+var timer = new Stopwatch();
+timer.Start();
+
+//kallar på metoden
 bubbleSort(unsortedList); 
 
 //skriver ut sorterade arrayen 
 Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt? 
 
+//stannar timern och skriver ut tiden
+timer.Stop(); 
+TimeSpan timeTaken = timer.Elapsed;
+string time = "Time taken: " + timeTaken.ToString(@"m\:ss\.fff");
+Console.WriteLine(time); 
+
 //Bubble sort metod 
 void bubbleSort(int[] unsortedList) 
 {   
     int temp; //en temporär variabel där man sätter in det större värdet 
-    var timer = new Stopwatch();
-    timer.Start(); 
+ 
     //första loopen kontrollerar om i är mindre än en mindre än längden på arrayen. Varje gång blir i 1 större. 
     for (int i = 0; i < unsortedList.Length - 1; i++) 
     {
@@ -62,9 +71,5 @@ void bubbleSort(int[] unsortedList)
             }
         }
     }
-    timer.Stop(); 
-    TimeSpan timeTaken = timer.Elapsed;
-    string time = "Time taken: " + timeTaken.ToString(@"m\:ss\.fff");
-    Console.WriteLine(time); 
 }
 
