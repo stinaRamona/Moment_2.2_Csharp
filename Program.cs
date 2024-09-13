@@ -59,8 +59,11 @@ Console.WriteLine(String.Join(", ", unsortedList));
 var timer = new Stopwatch();
 timer.Start();
 
+//kontroll av argument
+bool isDescending = argCheck(args);
+
 //kallar på metoden
-bubbleSort(unsortedList); 
+bubbleSort(unsortedList, isDescending); 
 
 //stannar timern och skriver ut tiden
 timer.Stop(); 
@@ -74,7 +77,7 @@ string time = "Tid: " + timeTaken.ToString(@"m\:ss\.fff");
 Console.WriteLine(time); 
 
 //Bubble sort metod 
-void bubbleSort(int[] unsortedList) 
+void bubbleSort(int[] unsortedList, bool isDescending) 
 {   
     int temp; //en temporär variabel där man sätter in det större värdet 
  
@@ -83,13 +86,19 @@ void bubbleSort(int[] unsortedList)
     {
         for (int j = 0; j < unsortedList.Length - (1 + i); j++) 
         {
-            if (unsortedList[j] > unsortedList[j +1])
-            {   
-                //här sker förflyttningen av det större värdet mellan temp och rätt plats i listan efter kontroll
-                temp = unsortedList[j + 1]; 
-                unsortedList[j + 1] = unsortedList[j]; 
-                unsortedList[j] = temp; 
-            }
+
+            bool condition = isDescending 
+                ? unsortedList[j] < unsortedList[j+ 1]  //fallande ordning
+                : unsortedList[j] > unsortedList[j+ 1]; //stigande ordning 
+
+                if(condition) 
+                {
+                    //här sker förflyttningen av det större värdet mellan temp och rätt plats i listan efter kontroll
+                    temp = unsortedList[j + 1]; 
+                    unsortedList[j + 1] = unsortedList[j]; 
+                    unsortedList[j] = temp; 
+                }
+            
         }
     }
 }
@@ -97,9 +106,6 @@ void bubbleSort(int[] unsortedList)
 //startar ny timer 
 var timer2 = new Stopwatch(); 
 timer2.Start(); 
-
-//kontroll av argument 
-bool isDescending = argCheck(args); 
 
 //sortering med inbyggda sort
 if(isDescending) 
