@@ -17,12 +17,25 @@ Man behöver alltså jämföra värdena med varandra i den ordningen som de stå
 till sist få en ordnad lista efter x antal loopar. 
 */
 
-
-//skapar en array med slumpade heltal från 1-100
-
-//sätter ett minsta värde och ett högsta värde
+//initierar så att man kan använda stopwatch
 using System.Diagnostics;
 
+//Läser argument som skickas med i start av programmet 
+void argCheck(string[] args)
+{   
+    //Grund är fallande
+    bool isDescending = false;
+    if(args.Length > 0 && args[0] == "-p")
+    {
+        if(args.Length > 1 && args[1] == "1")
+        {
+            isDescending = true; //Ändrar till stigande om argumentet som skickas med är -- -p 1
+        }
+    }
+};
+
+
+//sätter ett minsta värde och ett högsta värde
 int min = 0; 
 int max = 100; 
 
