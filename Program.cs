@@ -21,7 +21,7 @@ till sist få en ordnad lista efter x antal loopar.
 using System.Diagnostics;
 
 //Läser argument som skickas med i start av programmet 
-void argCheck(string[] args)
+bool argCheck(string[] args)
 {   
     //Grund är fallande
     bool isDescending = false;
@@ -32,6 +32,8 @@ void argCheck(string[] args)
             isDescending = true; //Ändrar till stigande om argumentet som skickas med är -- -p 1
         }
     }
+
+    return isDescending;
 };
 
 
@@ -96,14 +98,27 @@ void bubbleSort(int[] unsortedList)
 var timer2 = new Stopwatch(); 
 timer2.Start(); 
 
+//kontroll av argument 
+bool isDescending = argCheck(args); 
+
 //sortering med inbyggda sort
-Array.Sort(unsortedList); 
+if(isDescending) 
+{
+    Array.Sort(unsortedList);
+    Array.Reverse(unsortedList); //för fallande  
+} 
+else 
+{
+    Array.Sort(unsortedList);// default som är stigande
+}
+
+//stannar timer nr 2
+timer2.Stop(); 
+
 // skriver ut alla siffror
 Console.WriteLine("Sorterad med Array.Sort():");
 Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt?
 
-//stannar timer nr 2
-timer2.Stop(); 
 
 //skriver ut tiden som har gått under andra genomgången 
 TimeSpan timeTaken2 = timer2.Elapsed;
