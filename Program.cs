@@ -1,7 +1,7 @@
 ﻿/*
 Laboration 2.2 i kursen Programmering i C#.NET, HT24, Mittuniversitetet 
 Kod skriven av Stina Persson (stpe1901)
-Senast uppdaterad 10/9 - 24 
+Senast uppdaterad 13/9 - 24 
 */
 
 /*
