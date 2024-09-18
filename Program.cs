@@ -1,7 +1,7 @@
 ﻿/*
 Laboration 2.2 i kursen Programmering i C#.NET, HT24, Mittuniversitetet 
 Kod skriven av Stina Persson (stpe1901)
-Senast uppdaterad 13/9 - 24 
+Senast uppdaterad 18/9 - 24 
 */
 
 /*
@@ -10,9 +10,8 @@ Detta ska testas på en array med 100 värden i
 */
 
 /*
-Bubble sort innebär att värdena i ex en array jämförs med varandra genom att 
-det värde som är bredvid. 
-Om tex 9 är bredvid 3 i en array med stigande ordning så byter 9 och 3 plats. 
+Bubble sort innebär att värdena i ex en array jämförs med varandra genom 
+det värde som är bredvid.  
 Man behöver alltså jämföra värdena med varandra i den ordningen som de står för att
 till sist få en ordnad lista efter x antal loopar. 
 */
@@ -41,7 +40,7 @@ class Program
 
         //skriver ut den osorterade listan 
         Console.WriteLine("Osorterad lista:");
-        Console.WriteLine(String.Join(", ", unsortedList));
+        Console.WriteLine(String.Join(", ", unsortedList)); //skrivs på en rad med ett komma emellan
 
         //skapar timer som ska ta tid på metoden. 
         var timer = new Stopwatch();
@@ -58,8 +57,9 @@ class Program
 
         //skriver ut sorterade arrayen
         Console.WriteLine("Sorterad med bubble sort:");
-        Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt? 
+        Console.WriteLine(String.Join(", ", unsortedList));  
 
+        //Räknar ut hur läng tid som har gått och skriver ut
         TimeSpan timeTaken = timer.Elapsed;
         string time = "Tid: " + timeTaken.ToString(@"m\:ss\.fff");
         Console.WriteLine(time);
@@ -84,7 +84,7 @@ class Program
 
         // skriver ut alla siffror
         Console.WriteLine("Sorterad med Array.Sort():");
-        Console.WriteLine(String.Join(", ", unsortedList)); //kan jag skriva detta på ett annat sätt?
+        Console.WriteLine(String.Join(", ", unsortedList)); 
 
 
         //skriver ut tiden som har gått under andra genomgången 
@@ -119,6 +119,7 @@ class Program
 
         return isDescending;
     }
+
     //Bubble sort metod 
     static void bubbleSort(int[] unsortedList, bool isDescending)
     {
@@ -145,5 +146,4 @@ class Program
             }
         }
     }
-
 }
